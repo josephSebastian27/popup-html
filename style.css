@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville&family=Poppins:wght@100;400&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.show-popup{
+    padding: 18px 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: #33BBC5;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 12px black;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.popup-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgb(193, 194, 196); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.popup-container.active{
+    opacity: 1;
+    pointer-events: auto;
+    transition: .4s ease;
+}
+.popup-box{
+    width: 500px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.658);
+    padding: 30px;
+    transform: scale(0);
+}
+.popup-container.active .popup-box{
+    transform: scale(1);
+    transition: .4s ease;
+    transition-delay: .25s;
+}
+.popup-box h1{
+    color: #333;
+    line-height: 1;
+    padding-bottom: 10px;
+}
+.popup-box p{
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.popup-box .close-btn{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    color: white;
+    background-color: #33BBC5;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
+
+.gradient-background {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @media (max-width: 390px){
+    .popup-box{
+        width: 80%;
+    }
+  }
